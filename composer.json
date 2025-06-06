@@ -1,0 +1,27 @@
+{
+  "name": "hotel-project/my-app",
+  "description": "Hotel Booking System",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "App\\Config\\": "src/config/",
+      "App\\Controllers\\": "src/Controllers/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "vlucas/phpdotenv": "^5.6",
+    "monolog/monolog": "^2.0"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "php -r \"file_exists('vendor/autoload.php') && include 'vendor/autoload.php';\""
+    ],
+    "post-install-cmd": [
+      "php generate_permissions.php"
+    ],
+    "post-update-cmd": [
+      "php generate_permissions.php"
+    ]
+  }
+}
